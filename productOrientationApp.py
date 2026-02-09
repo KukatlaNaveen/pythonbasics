@@ -26,7 +26,7 @@ update_stock(100)
 #deduct stock
 update_stock(-50)
 
-# print(inventory_history)
+#  print(inventory_history)
 #Reorder level calculation
 
 def calculate_reorder_level():
