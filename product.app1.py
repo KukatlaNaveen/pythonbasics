@@ -66,7 +66,7 @@ def select_conn_type():
     if type_c in connection_types:
        print(f"you have selected {type_c} keyboard")
     else:
-       print("invalid")
+       print("vnvalid")
 # select_conn_type()
 
 def ordered_details():
