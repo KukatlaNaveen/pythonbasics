@@ -35,19 +35,19 @@ def remove_model():
 
 # create show room credentials using tuple
 showroom_cred=("password123","password231","password321")
-# print(show_room_cred)
-# print(type(show_room_cred))
+# print(showroom_cred)
+# print(type(showroom_cred))
 
 # 
-# #just get a first  password from show_room credentials
+# #just get a first  password from showroom credentials
 def get_password():
-    show_room_password=showroom_cred[0]
+    showroom_password=showroom_cred[0]
     print("first password from credentials:",showroom_cred[0])
 # get_password()
 
 # #add a password into the show room  credentials
 def add_password():
-    global show_room_cred
+    global showroom_cred
     temp_list=list(showroom_cred)
     temp_list.append("password789")
     showroom_cred=tuple(temp_list)
@@ -71,7 +71,7 @@ def check_current_stock():
 def calculate_reorder_level():
     
      if(vehicle_details['current_stock']<=minimum_stock):
-        print(f"we need add  stock{stock}") 
+        print(f"we need add  stock {stock}") 
      else:
          print("stock is availabel")
 # calculate_reorder_level() 

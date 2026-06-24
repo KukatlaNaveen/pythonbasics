@@ -11,7 +11,7 @@ typesof_colors=["red","green","white"]
 #using tuple for store brand names
 brand_types=("dell","hP","zebronics")
 
-#using set to store brand names
+#using set to store connection types 
 connection_types={"wired","wireless","bluetooth"}
 
 # using dictionary to store prices
@@ -39,7 +39,7 @@ def check_stock():
      else:
         print("out of stock")
 # check_stock()
- #select keyboard and price
+ #select keyboard brand and price
 def select_keyboard():
     global choose_keyboard,original_price
     choose_keyboard=input("enter the brand name (dell,hP,zebronics):")
@@ -47,9 +47,39 @@ def select_keyboard():
         original_price=keyboard_prices[choose_keyboard]
         print(f"you have selected {choose_keyboard} and price for {choose_keyboard} is {original_price}")
     else:
-       print(" invalid")
+       print(" invalid brand")
 # select_keyboard()
+def add_brand():
+   global brand_types,temp_list,select_keyboard
+   temp_list=list(brand_types)
+   temp_list.append("apple")
+   brand_types=tuple(temp_list)
+   print("upadated brand type",brand_types)
+   keyboard_prices["apple"]=3000
+   print("updated price and brand",keyboard_prices)
+# add_brand()
 
+# def loop():
+while True:
+    option = input("""select options :
+                        1.display details :
+                        2.select brand :
+                        3.select color :
+                        4.select connection type :
+                        5.show your ordered details :
+                        6.exit
+                     Enter your option here: """  )
+    if option =="1":
+       print("product details are")
+       display_details()
+    elif option=="2":
+       print(" you select brand here")
+       select_keyboard
+    elif option=="3":
+       print(" select color here")
+       
+# loop()
+        
 #select keyboard color
 def select_color():
    global choose_color
@@ -58,7 +88,7 @@ def select_color():
       print(f"you have selected :{choose_color} color keyboard")
    else:
       print("invalid color")
-# select_color()
+select_color()
 
 def select_conn_type():
     global type_c
@@ -66,8 +96,8 @@ def select_conn_type():
     if type_c in connection_types:
        print(f"you have selected {type_c} keyboard")
     else:
-       print("vnvalid")
-# select_conn_type()
+       print("invalid connetion type")
+# select_connection_type()
 
 def ordered_details():
     print(f"your ordered {choose_color} color keyboard {choose_keyboard} brand {type_c} type and price is {original_price}")
@@ -79,21 +109,28 @@ def main():
    display_details()
    print("=================================")
   
-   print("====display the selected brand and its price=====")
-   select_keyboard()
-   print("===============================")
+   # print("====display the selected brand and its price=====")
+   # select_keyboard()
+   # print("===============================")
    
-   print("display selected keyboard color")
-   select_color()
-   print("================================")
+   # print("========adding brand and price=======================")
+   # add_brand()
+   # print("===============================")
 
-   print('======display keyboard type=======')
-   select_conn_type()
-   print("======================")
+
    
-   print("=====display the  ordered details====")
-   ordered_details()
-   print("======================")
+   # print("display selected keyboard color")
+   # select_color()
+   # print("================================")
+
+   # print('======display keyboard type=======')
+   # select_conn_type()
+   # print("======================")
+   
+   # print("=====display the  ordered details====")
+   # ordered_details()
+   # print("======================")
+   
    
 if __name__ == "__main__":
    main()
